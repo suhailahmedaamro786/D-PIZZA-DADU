@@ -13,10 +13,10 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "D-Pizza Food — Dadu" },
-      { name: "description", content: "D-Pizza Food — order zingers, broasts, hand-tossed pizzas, rolls and bundle deals online with live order tracking." },
-      { property: "og:title", content: "D-Pizza Food — Dadu" },
-      { property: "og:description", content: "Zingers, broasts, pizzas & exclusive bundle deals." },
+      { title: "D-Pizza Food Dadu | Pizza, Burgers, BBQ & Fast Food" },
+      { name: "description", content: "Order pizza, burgers, zingers, broast, rolls, BBQ and deals from D-Pizza Food in Dadu, Sindh. View the menu and place your order through WhatsApp." },
+      { property: "og:title", content: "D-Pizza Food Dadu | Pizza, Burgers, BBQ & Fast Food" },
+      { property: "og:description", content: "Explore pizza, burgers, zingers, broast, rolls, BBQ and fast-food deals in Dadu. Order through WhatsApp." },
       { property: "og:url", content: "https://d-pizza.vercel.app/" },
       { property: "og:locale", content: "en_PK" },
       { property: "og:type", content: "website" },
