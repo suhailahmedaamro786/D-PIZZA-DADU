@@ -36,8 +36,19 @@ export function Footer() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-border py-5 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} D-PIZZA FOOD. All rights reserved.
+      <div className="border-t border-border px-4 py-5 text-center text-xs text-muted-foreground">
+        <div>© {new Date().getFullYear()} D-PIZZA FOOD. All rights reserved.</div>
+        <div className="mt-2">
+          Powered by{" "}
+          <a
+            href="https://suhailahmedaamro.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-amber-brand transition hover:underline"
+          >
+            SK DEV TEAM
+          </a>
+        </div>
       </div>
     </footer>
   );
