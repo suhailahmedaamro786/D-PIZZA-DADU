@@ -9,6 +9,8 @@ import { FindUs } from "@/components/FindUs";
 import { Reviews } from "@/components/Reviews";
 import { AboutDPizza } from "@/components/AboutDPizza";
 
+const siteUrl = "https://d-pizza.com";
+
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
@@ -17,17 +19,17 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Order pizza, burgers, zingers, broast, rolls, BBQ and deals from D-Pizza Food in Dadu, Sindh. View the menu and place your order through WhatsApp." },
       { property: "og:title", content: "D-Pizza Food Dadu | Pizza, Burgers, BBQ & Fast Food" },
       { property: "og:description", content: "Explore pizza, burgers, zingers, broast, rolls, BBQ and fast-food deals in Dadu. Order through WhatsApp." },
-      { property: "og:url", content: "https://d-pizza.vercel.app/" },
+      { property: "og:url", content: siteUrl + "/" },
       { property: "og:locale", content: "en_PK" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "D-Pizza Food" },
-      { property: "og:image", content: "https://d-pizza.vercel.app/1791122318601.jpg" },
+      { property: "og:image", content: siteUrl + "/1791122318601.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: "https://d-pizza.vercel.app/1791122318601.jpg" },
+      { name: "twitter:image", content: siteUrl + "/1791122318601.jpg" },
     ],
     links: [
-      { rel: "canonical", href: "https://d-pizza.vercel.app/" },
-      { rel: "alternate", hrefLang: "en-PK", href: "https://d-pizza.vercel.app/" },
+      { rel: "canonical", href: siteUrl + "/" },
+      { rel: "alternate", hrefLang: "en-PK", href: siteUrl + "/" },
     ],
     scripts: [
       {
@@ -35,9 +37,9 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Restaurant",
-          "@id": "https://d-pizza.vercel.app/#restaurant",
+          "@id": siteUrl + "/#restaurant",
           name: "D-Pizza Food",
-          url: "https://d-pizza.vercel.app/",
+          url: siteUrl + "/",
           telephone: "+923131342361",
           servesCuisine: ["Pizza", "Fast Food", "BBQ", "Burgers", "Pakistani"],
           priceRange: "Rs",
@@ -56,7 +58,7 @@ export const Route = createFileRoute("/")({
             opens: "18:00",
             closes: "01:00"
           }],
-          menu: "https://d-pizza.vercel.app/#menu",
+          menu: siteUrl + "/#menu",
           hasMap: "https://www.google.com/maps/search/?api=1&query=PQGH%2B54Q+D-Pizza+Food+Shahani+Paro+Rd+Dadu+Pakistan"
         }),
       },
