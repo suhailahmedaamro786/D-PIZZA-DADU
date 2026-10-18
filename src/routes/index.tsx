@@ -9,7 +9,7 @@ import { FindUs } from "@/components/FindUs";
 import { Reviews } from "@/components/Reviews";
 import { AboutDPizza } from "@/components/AboutDPizza";
 
-const siteUrl = "https://d-pizza.com";
+const siteUrl = "https://d-pizza.shop";
 
 export const Route = createFileRoute("/")({
   component: Index,
