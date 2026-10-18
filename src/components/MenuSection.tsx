@@ -56,7 +56,7 @@ export function MenuSection() {
       <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.6, ease: "easeOut" }} className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
         <div>
           <div className="text-[11px] font-bold uppercase tracking-[0.22em] text-amber-brand">The Menu</div>
-          <h2 className="mt-2 text-4xl font-black tracking-tight sm:text-5xl">Pick your craving.</h2>
+          <h2 className="mt-2 text-4xl font-black tracking-tight sm:text-5xl">Pizza, Burgers & Fast Food Menu in Dadu</h2>
         </div>
         <p className="max-w-md text-sm text-muted-foreground">Tap any item to see details. Hit <span className="font-bold text-amber-brand">Add</span> to drop it in your cart.</p>
       </motion.div>
