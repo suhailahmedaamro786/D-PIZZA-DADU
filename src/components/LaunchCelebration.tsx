@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CheckCircle2, PartyPopper, X } from "lucide-react";
+import { CheckCircle2, Clock3, PartyPopper, X } from "lucide-react";
 
 // Fixed launch milestone: 24 hours after the owner's request (Pakistan time: 11:15 PM, Oct 18, 2026).
 const LAUNCH_DEADLINE = new Date("2026-10-19T18:15:39Z").getTime();
@@ -20,8 +20,14 @@ function getRemaining() {
 export function LaunchCelebration() {
   const [remaining, setRemaining] = useState(getRemaining);
   const [showCelebration, setShowCelebration] = useState(false);
+  const [celebrationSeen, setCelebrationSeen] = useState(false);
 
   useEffect(() => {
+    if (window.localStorage.getItem(CELEBRATION_KEY)) {
+      setCelebrationSeen(true);
+      return;
+    }
+
     const update = () => {
       const next = getRemaining();
       setRemaining(next);
@@ -42,27 +48,35 @@ export function LaunchCelebration() {
 
   return (
     <>
-      {remaining.total > 0 && (
-        <div className="relative z-40 border-b border-amber-400/25 bg-[#101014] px-3 py-3 text-center text-white">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-300 sm:text-sm">
-            D-Pizza digital launch celebration
-          </p>
-          <p className="mt-1 text-sm text-white/75">
-            Celebration begins in
-          </p>
-          <div className="mt-2 flex justify-center gap-2 sm:gap-3" aria-label="Countdown timer">
-            {[
-              { label: "Hours", value: remaining.hours },
-              { label: "Minutes", value: remaining.minutes },
-              { label: "Seconds", value: remaining.seconds },
-            ].map((unit) => (
-              <div key={unit.label} className="min-w-[62px] rounded-lg border border-white/10 bg-white/[0.06] px-3 py-2 sm:min-w-[76px]">
-                <span className="block font-mono text-xl font-bold tabular-nums text-amber-300 sm:text-2xl">
-                  {String(unit.value).padStart(2, "0")}
-                </span>
-                <span className="text-[10px] uppercase tracking-wider text-white/55">{unit.label}</span>
-              </div>
-            ))}
+      {remaining.total > 0 && !celebrationSeen && (
+        <div className="fixed inset-0 z-[90] flex min-h-screen items-center justify-center overflow-y-auto bg-[#08090d] px-4 py-10 text-center text-white">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(245,158,11,0.16),transparent_55%)]" />
+          <div className="relative mx-auto w-full max-w-2xl">
+            <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full border border-amber-300/30 bg-amber-300/10 text-amber-300">
+              <Clock3 size={38} />
+            </div>
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-amber-300 sm:text-sm">SK DEV TEAM presents</p>
+            <h1 className="mt-4 text-4xl font-black tracking-tight sm:text-6xl">D-Pizza Website Launch</h1>
+            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-white/65 sm:text-lg">
+              We’re preparing the final launch experience. The full website will be available when the countdown ends.
+            </p>
+            <div className="mx-auto mt-9 grid max-w-lg grid-cols-3 gap-3 sm:gap-5" aria-label="Full-page launch countdown">
+              {[
+                { label: "Hours", value: remaining.hours },
+                { label: "Minutes", value: remaining.minutes },
+                { label: "Seconds", value: remaining.seconds },
+              ].map((unit) => (
+                <div key={unit.label} className="rounded-2xl border border-white/10 bg-white/[0.05] px-3 py-5 sm:px-5 sm:py-7">
+                  <span className="block font-mono text-4xl font-black tabular-nums text-amber-300 sm:text-6xl">
+                    {String(unit.value).padStart(2, "0")}
+                  </span>
+                  <span className="mt-2 block text-[10px] font-semibold uppercase tracking-[0.2em] text-white/50 sm:text-xs">{unit.label}</span>
+                </div>
+              ))}
+            </div>
+            <div className="mx-auto mt-8 h-px max-w-xs bg-gradient-to-r from-transparent via-amber-300/50 to-transparent" />
+            <p className="mt-6 text-sm font-semibold text-white/80">Powered by SK DEV TEAM</p>
+            <p className="mt-1 text-xs text-white/50">Founder: Mr. Suhail Ahmed Aamro</p>
           </div>
         </div>
       )}
