@@ -16,6 +16,7 @@ import { ThemeProvider } from "@/hooks/useTheme";
 import { MotionConfig } from "motion/react";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { PageLoader } from "@/components/PageLoader";
+import { LaunchCelebration } from "@/components/LaunchCelebration";
 
 function NotFoundComponent() {
   return (
@@ -114,6 +115,7 @@ function RootComponent() {
       <MotionConfig reducedMotion="user">
       <ThemeProvider>
         <AuthProvider>
+          <LaunchCelebration />
           <ScrollProgress />
           <PageLoader />
           <Outlet />
