@@ -23,9 +23,9 @@ export const Route = createFileRoute("/")({
       { property: "og:locale", content: "en_PK" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "D-Pizza Food" },
-      { property: "og:image", content: siteUrl + "/1791122318601.jpg" },
+      { property: "og:image", content: siteUrl + "/assets/menu-images/Pizzas/D-Pizza%20Special.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: siteUrl + "/1791122318601.jpg" },
+      { name: "twitter:image", content: siteUrl + "/assets/menu-images/Pizzas/D-Pizza%20Special.jpg" },
     ],
     links: [
       { rel: "canonical", href: siteUrl + "/" },
