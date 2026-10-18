@@ -58,7 +58,7 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
               router.invalidate();
               reset();
             }}
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
           >
             Try again
           </button>
@@ -73,6 +73,8 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
     </div>
   );
 }
+
+const siteUrl = "https://d-pizza.com";
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
@@ -90,14 +92,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "en_PK" },
       { property: "og:site_name", content: "D-Pizza Food" },
-      { property: "og:image", content: "https://d-pizza.vercel.app/1791122318601.jpg" },
-      { name: "twitter:image", content: "https://d-pizza.vercel.app/1791122318601.jpg" },
+      { property: "og:image", content: siteUrl + "/1791122318601.jpg" },
+      { property: "og:url", content: siteUrl + "/" },
+      { name: "twitter:image", content: siteUrl + "/1791122318601.jpg" },
       { name: "twitter:site", content: "@dpizzafood" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "D-PIZZA FOOD" },
       { name: "twitter:description", content: "Pizza, burgers, zingers, broast, rolls, BBQ, pasta and deals in Dadu. Order directly through WhatsApp." },
     ],
-    links: [{ rel: "stylesheet", href: appCss }],
+    links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "canonical", href: siteUrl + "/" },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
