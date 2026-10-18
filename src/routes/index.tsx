@@ -8,6 +8,7 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { FindUs } from "@/components/FindUs";
 import { Reviews } from "@/components/Reviews";
 import { AboutDPizza } from "@/components/AboutDPizza";
+import { LaunchCelebration } from "@/components/LaunchCelebration";
 
 const siteUrl = "https://d-pizza.shop";
 
@@ -73,6 +74,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <LaunchCelebration />
       <Navbar />
       <main>
         <Hero />
