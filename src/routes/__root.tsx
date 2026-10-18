@@ -74,7 +74,7 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
   );
 }
 
-const siteUrl = "https://d-pizza.com";
+const siteUrl = "https://d-pizza.shop";
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
