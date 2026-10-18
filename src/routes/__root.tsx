@@ -74,31 +74,13 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
   );
 }
 
-const siteUrl = "https://d-pizza.shop";
-
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "D-Pizza Food Dadu | Pizza, BBQ, Burgers & Fast Food" },
-      { name: "description", content: "Order pizza, burgers, zingers, broast, rolls, BBQ, pasta and deals from D-Pizza Food in Dadu, Sindh. Fast WhatsApp ordering with delivery details." },
-      { name: "author", content: "D-Pizza Food" },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
       { name: "theme-color", content: "#0b0b0c" },
-      { name: "keywords", content: "D Pizza Food Dadu, pizza in Dadu, fast food Dadu, BBQ Dadu, burgers Dadu, pizza delivery Dadu, food delivery Dadu, Shahani Paro Dadu" },
-      { property: "og:title", content: "D-Pizza Food Dadu | Pizza, BBQ, Burgers & Fast Food" },
-      { property: "og:description", content: "Pizza, burgers, zingers, broast, rolls, BBQ, pasta and deals in Dadu. Order directly through WhatsApp." },
-      { property: "og:type", content: "website" },
-      { property: "og:locale", content: "en_PK" },
-      { property: "og:site_name", content: "D-Pizza Food" },
-      { property: "og:image", content: siteUrl + "/assets/menu-images/Pizzas/D-Pizza%20Special.jpg" },
-      { property: "og:url", content: siteUrl + "/" },
-      { name: "twitter:image", content: siteUrl + "/assets/menu-images/Pizzas/D-Pizza%20Special.jpg" },
-      { name: "twitter:site", content: "@dpizzafood" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "D-PIZZA FOOD" },
-      { name: "twitter:description", content: "Pizza, burgers, zingers, broast, rolls, BBQ, pasta and deals in Dadu. Order directly through WhatsApp." },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
