@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { CheckCircle2, Clock3, PartyPopper, X } from "lucide-react";
 
 // Fixed launch milestone: 24 hours after the owner's request (Pakistan time: 11:15 PM, Oct 18, 2026).
-const LAUNCH_DEADLINE = new Date("2026-10-19T18:15:39Z").getTime();
+const LAUNCH_DEADLINE = new Date("2026-10-19T16:00:00Z").getTime();
 const CELEBRATION_KEY = "d-pizza-launch-celebration-seen-v1";
 
 function getRemaining() {
